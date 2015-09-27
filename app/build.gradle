@@ -19,8 +19,11 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://github.com/QVDev/DistilledViewPrefs/raw/master/releases/" }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile project(':distilled')
+    compile 'distilledview.utils.qvdev.com.distilled:distilledview-lib:1.0'
 }
