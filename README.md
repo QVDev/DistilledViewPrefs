@@ -7,7 +7,18 @@ add screenshots here
 ![Alt text](/screens/dialog_open_with_text.png "Choose Font")
 
 # Implementation example
-First register for preference changes. Take the default as the library does as well
+Add this to your gradle build file
+```java
+repositories {
+    maven { url "https://github.com/QVDev/DistilledViewPrefs/raw/master/releases/" }
+}
+
+dependencies {
+    compile 'distilledview.utils.qvdev.com.distilled:distilledview-lib:1.0'
+}
+```
+
+Register for preference changes. Take the default as the library does as well
 ```java
 //Let your class implement
 implements SharedPreferences.OnSharedPreferenceChangeListener
