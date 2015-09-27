@@ -2,7 +2,6 @@
 Dialog for Android TextView to improve readability. Mostly used for applications wher the main focus is to read.
 
 # Screens
-add screenshots here
 ![Alt text](/screens/dialog_open_default.png "The dialog")
 ![Alt text](/screens/dialog_open_with_text.png "Choose Font")
 
