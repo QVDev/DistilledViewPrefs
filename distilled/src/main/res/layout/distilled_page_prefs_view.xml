@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright 2014 The Chromium Authors. All rights reserved.
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file.
+-->
+
+<distilledview.utils.qvdev.com.distilled.DistilledPagePrefsView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/distilled_page_pref_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RadioGroup
+        android:id="@+id/radio_button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/light_mode"
+            style="@style/DistilledPagePrefThemeButton"
+            android:text="@string/light_mode" />
+
+        <RadioButton
+            android:id="@+id/dark_mode"
+            style="@style/DistilledPagePrefThemeButton"
+            android:text="@string/dark_mode" />
+
+        <RadioButton
+            android:id="@+id/sepia_mode"
+            style="@style/DistilledPagePrefThemeButton"
+            android:text="@string/sepia_mode" />
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/font_family"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/font_size_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/text_size_signifier"
+            android:textSize="13sp" />
+
+        <SeekBar
+            android:id="@+id/font_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="60"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:gravity="center_vertical"
+            android:text="@string/text_size_signifier"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</distilledview.utils.qvdev.com.distilled.DistilledPagePrefsView>

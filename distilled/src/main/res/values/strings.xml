@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="light_mode">Light</string>
+    <string name="dark_mode">Dark</string>
+    <string name="sepia_mode">Sepia</string>
+    <string name="text_size_signifier">A</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="distiller_mode_font_family_values">
+        <item name="monospace">monospace</item>
+        <item name="serif">serif</item>
+        <item name="serif">sans serif</item>
+    </string-array>
+</resources>

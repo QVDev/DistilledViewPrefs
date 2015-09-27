@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Distilled Page Prefs colors -->
+    <color name="distilled_page_prefs_selected">#999999</color>
+    <color name="distilled_page_prefs_unselected">#ffffff</color>
+    <color name="light">#ffffff</color>
+    <color name="dark">#000000</color>
+    <color name="sepia">#5B4E38</color>
+
+</resources>
