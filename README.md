@@ -1,5 +1,7 @@
 # DistilledViewPrefs
-Dialog for Android TextView to improve readability. Mostly used for applications wher the main focus is to read.
+Dialog for Android TextView to improve readability. Mostly used for applications where the main focus is to read. Spin-off from the blog https://medium.com/@qvdev/improving-readability-3baa2d943936
+
+Please feel free to post feedback on any topic. Improvements, code related or suggestions. Fork it if you feel for it as well. :)
 
 # Screens
 ![Alt text](/screens/dialog_open_default.png "The dialog")
