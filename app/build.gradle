@@ -25,5 +25,5 @@ repositories {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile 'distilledview.utils.qvdev.com.distilled:distilledview-lib:1.0'
+    compile 'distilledview.utils.qvdev.com.distilled:distilledview-lib:1.1'
 }
