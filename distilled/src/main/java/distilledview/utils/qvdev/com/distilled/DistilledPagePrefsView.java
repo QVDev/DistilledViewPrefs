@@ -2,10 +2,12 @@ package distilledview.utils.qvdev.com.distilled;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,8 @@ import java.util.Map;
  * to change the theme, font size, etc. of distilled pages.
  */
 public class DistilledPagePrefsView extends LinearLayout implements SeekBar.OnSeekBarChangeListener {
+
+    private static final float DEFAULT_FONT_SIZE = 16.0f;
 
     private enum STYLE {
         LIGHT,
@@ -259,5 +263,37 @@ public class DistilledPagePrefsView extends LinearLayout implements SeekBar.OnSe
      */
     private void setFontScaleTextView(float newValue) {
         mFontScaleTextView.setText(mPercentageFormatter.format(newValue));
+    }
+
+    public static void restorePreferedOptions(TextView textView) {
+        SharedPreferences defaultPreferences = PreferenceManager.getDefaultSharedPreferences(textView.getContext());
+
+        setTextViewSizeWithScale(textView, defaultPreferences.getFloat(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_SCALE, DistilledPagePrefs.DEFAULT_FONT_SCALE));
+        setTextViewMode(textView, defaultPreferences.getInt(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_MODE, DistilledPagePrefs.DEFAULT_FONT_MODE));
+        setTextViewTypeFace(textView, defaultPreferences.getInt(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_TYPEFACE, DistilledPagePrefs.DEFAULT_TYPE_FACE));
+    }
+
+    public static void applyToTextView(TextView textView, SharedPreferences sharedPreferences, String preferenceName) {
+        if (preferenceName.contentEquals(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_SCALE)) {
+            float newValue = sharedPreferences.getFloat(preferenceName, 1);
+            setTextViewSizeWithScale(textView, newValue);
+        } else if (preferenceName.contentEquals(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_MODE)) {
+            setTextViewMode(textView, sharedPreferences.getInt(preferenceName, DistilledPagePrefs.DEFAULT_FONT_MODE));
+        } else if (preferenceName.contentEquals(DistilledPagePrefs.DISTILLED_PREF_USER_SET_FONT_TYPEFACE)) {
+            setTextViewTypeFace(textView, sharedPreferences.getInt(preferenceName, DistilledPagePrefs.DEFAULT_TYPE_FACE));
+        }
+    }
+
+    private static void setTextViewSizeWithScale(TextView textView, float value) {
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DEFAULT_FONT_SIZE * value);
+    }
+
+    private static void setTextViewMode(TextView textView, int mode) {
+        textView.setBackgroundResource(DistilledPagePrefsView.getBackgroundColorFromMode(mode));
+        textView.setTextColor(textView.getResources().getColor(DistilledPagePrefsView.getTexColorFromMode(mode)));
+    }
+
+    private static void setTextViewTypeFace(TextView textView, int typeFace) {
+        textView.setTypeface(DistilledPagePrefsView.getTypeFaceForPosition(typeFace));
     }
 }
