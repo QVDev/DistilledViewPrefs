@@ -1,4 +1,6 @@
-# DistilledViewPrefs
+# DistilledViewPrefs 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DistilledViewPrefs-green.svg?style=flat)](https://android-arsenal.com/details/1/2567)
+
 Dialog for Android TextView to improve readability. Mostly used for applications where the main focus is to read. Spin-off from the blog https://medium.com/@qvdev/improving-readability-3baa2d943936
 
 Please feel free to post feedback on any topic. Improvements, code related or suggestions. Fork it if you feel for it as well. :)
